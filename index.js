@@ -14,7 +14,7 @@ fastify.get('/report/:id', async (request, reply)=>{
 // Run the server!
 const start = async () => {
   try {
-    await fastify.listen({ port: 8100 })
+    await fastify.listen({ host:'0.0.0.0', port: 8100 })
   } catch (err) {
     fastify.log.error(err)
     process.exit(1)
