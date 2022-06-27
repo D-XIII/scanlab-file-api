@@ -6,7 +6,7 @@ const path = require('path')
 fastify.get('/report/:id', async (request, reply)=>{
     const id = request.params.id
     console.log(id)
-    const stream = fs.createReadStream(path.resolve(`${id}/reports/report.json`))
+    const stream = fs.createReadStream(path.resolve(`/home/cuckoo/.cuckoo/storage/analyses/${id}/reports/report.json`))
 
     reply.type('text/json').send(stream)
     return reply
